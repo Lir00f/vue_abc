@@ -12,13 +12,21 @@
 		num2: 2,
 		num3: 3,
     arr1: ['x', 'y', 'z'], 
-    arr2: [1, 2, 3], 
+    arr2: [1, 2, 3],
+    obj: {x: 1, y: 2, z: 3}, 
 	}
+},
+methods: { 
+ show: function() { 
+  alert(today); 
+ }
 }
-  }
+}
+  let today = new Date(); 
 </script>
 
 <template>
+  {{ show() }}
   <div>
 		<h1> Vue exercises </h1>
 	</div>
@@ -28,6 +36,7 @@
     <p>Check out my skills <a href="page.html">here</a></p> <br>
     <p class="sc">Квадрат num равен {{num*num}}, А сумма num1,num2,num3 равна {{num1+num2+num3}}.</p>
     <p class="sc"> Выведем каждую букву из массива в отдельной строке: <br> {{arr1[0]}} <br> {{arr1[1]}} <br> {{arr1[2]}} <br> Теперь сумму элементов второго массива : {{arr2[0] + arr2[1] + arr2[2]}}</p>
+    <p class="sc">Выведем сумму элементов obj : {{obj.x + obj.y + obj.z}} </p>
   </div>
 </template>
 
