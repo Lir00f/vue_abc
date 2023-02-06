@@ -41,7 +41,7 @@ methods: {
     <p class="sc"> Выведем каждую букву из массива в отдельной строке: <br> {{arr1[0]}} <br> {{arr1[1]}} <br> {{arr1[2]}} <br> Теперь сумму элементов второго массива : {{arr2[0] + arr2[1] + arr2[2]}}</p>
     <p class="sc">Выведем сумму элементов obj : {{obj.x + obj.y + obj.z}} </p>
     <button class="button button1" @click="show">Узнать дату(нажатие)</button> <br> 
-    <button class="button button2" @mouseenter="show"> Узнать дату(навестись)</button> 
+    <button class="button button2" @mouseenter="show">Узнать дату(навестись)</button> 
   </div>
 </template>
 
