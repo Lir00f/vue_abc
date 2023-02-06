@@ -4,6 +4,9 @@
 	return {
 		name: 'Shadow',
 		surn: 'Fiend',
+    attr: 'sf.gif',
+    text: 'page',
+		href: 'page.html',
 	}
 }
   }
@@ -14,11 +17,17 @@
 		<h1> Vue exercises </h1>
 	</div>
   <br>
-  <div> <p> {{ name }} {{ surn }}</p>
+  <br>
+  <br>
+  <br>
+  <img :src="attr">
+  <div> <p> Hello, i'm {{ name }} {{ surn }}</p>
+    <p>Check out my skills <a href="page.html">here</a></p>
   </div>
 </template>
 
 <style >
+
 header {
   line-height: 1.5;
 }
