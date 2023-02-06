@@ -14,6 +14,7 @@
     arr1: ['x', 'y', 'z'], 
     arr2: [1, 2, 3],
     obj: {x: 1, y: 2, z: 3}, 
+    date : '2',
 	}
 },
 methods: { 
@@ -22,14 +23,21 @@ methods: {
  },
  summ: function() {
   alert(this.num1 + this.num2)
- }
+ },
+data: function(){
+let date = this.dayOfWeek(this.date);
+alert(date);
+},
+dayOfWeek: function(date){
+let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+return days[date-1];
+},
 }
 }
-  let today = new Date(); 
+let today = new Date(); 
 </script>
 
 <template>
-  {{ summ() }}
   <div>
 		<h1> Vue exercises </h1>
 	</div>
@@ -40,8 +48,9 @@ methods: {
     <p class="sc">Квадрат num равен {{num*num}}, А сумма num1,num2,num3 равна {{num1+num2+num3}}.</p>
     <p class="sc"> Выведем каждую букву из массива в отдельной строке: <br> {{arr1[0]}} <br> {{arr1[1]}} <br> {{arr1[2]}} <br> Теперь сумму элементов второго массива : {{arr2[0] + arr2[1] + arr2[2]}}</p>
     <p class="sc">Выведем сумму элементов obj : {{obj.x + obj.y + obj.z}} </p>
-    <button class="button button1" @click="show">Узнать дату(нажатие)</button> <br> 
-    <button class="button button2" @mouseenter="show">Узнать дату(навестись)</button> 
+    <button class="button button1" @click="show">Узнать дату(нажатие)</button>
+    <button class="button button2" @mouseenter="show">Узнать дату(навестись)</button> <br>
+    <button class="button button1" @click="date">Узнать день недели по числу({{ date }})</button>
   </div>
 </template>
 
