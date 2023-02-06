@@ -1,18 +1,35 @@
 <script>
   export default {
-	  name: 'App',
+    data() {
+	return {
+		name: 'Shadow',
+		surn: 'Fiend',
+	}
+}
   }
 </script>
 
 <template>
   <div>
-		<h1> Lorem, ipsum dolor. </h1>
+		<h1> Vue exercises </h1>
 	</div>
+  <br>
+  <div> <p> {{ name }} {{ surn }}</p>
+  </div>
 </template>
 
 <style >
 header {
   line-height: 1.5;
+}
+
+
+p {
+  line-height: 2.5;
+  font-size: large;
+  letter-spacing: 2px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgb(255, 0, 0);
 }
 
 .logo {
