@@ -2,6 +2,7 @@
   export default {
     data() {
 	return {
+    text: 'type',
 		name: 'Shadow',
 		surn: 'Fiend',
     attr: 'sf.gif',
@@ -34,7 +35,12 @@ return days[date-1];
 },
 double: function(str){
 alert(str*str);
-},
+},changeToType: function() {
+      this.text = 'type';
+    },
+changeToWrite: function() {
+      this.text = 'write';
+    }
 }
 }
 let today = new Date(); 
@@ -45,17 +51,12 @@ let today = new Date();
 		<h1> Vue exercises </h1>
 	</div>
   <br>
-  <img :src="attr">
+  <img width="500" height="500" :src="attr">
   <div> <p> Hello, i'm {{ name }} {{ surn }}</p>
     <p>Check out my skills <a href="page.html">here</a></p> <br>
-    <p class="sc">Квадрат num равен {{num*num}}, А сумма num1,num2,num3 равна {{num1+num2+num3}}.</p>
-    <p class="sc"> Выведем каждую букву из массива в отдельной строке: <br> {{arr1[0]}} <br> {{arr1[1]}} <br> {{arr1[2]}} <br> Теперь сумму элементов второго массива : {{arr2[0] + arr2[1] + arr2[2]}}</p>
-    <p class="sc">Выведем сумму элементов obj : {{obj.x + obj.y + obj.z}} </p>
-    <button class="button button1" @click="show">Узнать дату(нажатие)</button>
-    <button class="button button2" @mouseenter="show">Узнать дату(навестись)</button> <br>
-    <button class="button button1" @click="data">Узнать день недели по числу( {{ date }} )</button>
-    <button class="button" @click="double(2)">Выведет квадрат числа 2</button>
-    <button class="button" @click="double(3)">Выведет квадрат числа 3</button>
+    <p>{{ text }}</p><br>
+    <button class="button" @click="changeToWrite">Change to "write"</button><br>
+    <button class="button" @click="changeToType">Change to "type"</button> 
   </div>
 </template>
 
