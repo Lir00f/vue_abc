@@ -2,25 +2,22 @@
 export default {
   data() {
     return {
-      den: "if you see this then something went wrong",
+      vozrast: " ",
     }
   },
   methods: {
-    denOfTheWeek: function() {
-    this.den = new Date().getDay();
-  },
-}
+  }
 }
 </script>
 <template>
-  <button class="button" @click="denOfTheWeek">тык</button><br>
-  <p v-if="this.den === 1">Понедельник</p>
-  <p v-if="this.den === 2">Вторник</p>
-  <p v-if="this.den === 3">Среда</p>
-  <p v-if="this.den === 4">Четверг</p>
-  <p v-if="this.den === 5">Пятница</p>
-  <p v-if="this.den === 6">Суббота</p>
-  <p v-if="this.den === 0">Воскресенье</p>
+  <h3>Введите ваш возраст: </h3><br>
+  <input type="number" v-model.number="vozrast">
+  <br>
+  <p class="button" v-if="vozrast < 14">Вы ребенок</p>
+  <p class="button"  v-else-if="vozrast < 18">Вы подросток</p>
+  <p class="button"  v-else-if="vozrast < 25">Вы молодой человек</p>
+  <p class="button"  v-else-if="vozrast <= 59">Вы взрослый человек</p>
+  <p class="button"  v-else-if="vozrast >= 60">Вы пожилой человек</p>
 </template>
 
 <style >
