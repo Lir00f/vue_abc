@@ -2,7 +2,20 @@
 export default {
   data() {
     return {
-      values: [1, 3, 5, -4, 7],
+      names: [
+			{
+				id: 1,
+				value: 'name1',
+			},
+			{
+				id: 2,
+				value: 'name2',
+			},
+			{
+				id: 3,
+				value: 'name3',
+			},
+		]
     }
   },
   methods: {
@@ -10,9 +23,9 @@ export default {
 }
 </script>
 <template>
-  <div v-for="value in values">
-    <p v-if="value >= 0">{{ value }}&nbsp;</p>
-  </div>
+  <ul v-for="smh in names" :key="smh.id">
+    <li>{{ smh.value }}</li>
+  </ul>
 </template>
 
 
