@@ -1,38 +1,24 @@
 <script>
-  export default {
-    data() {
-	return {
-    price: 'Press to compute the price',
-		name: 'Shadow',
-		surn: 'Fiend',
-    attr: 'sf.gif',
-    text: 'page',
-		href: 'page.html',
-	}
-},
-methods: { 
-  alyarm: function() {
-      alert(`This will only be shown once`);
+export default {
+  data() {
+    return {
+      visibility: false,
+    }
+  },
+  methods: {
+    changeVisibility: function() {
+      this.visibility = !this.visibility
     }
   }
 }
 </script>
-
 <template>
-  <div>
-		<h1> Vue exercises </h1>
-	</div>
-  <br>
-  <img width="500" height="500" :src="attr">
-  <div> <p> Hello, i'm {{ name }} {{ surn }}</p>
-  <p>Check out my skills <a href="page.html">here</a></p> <br>
-  <a href.prevent="https://github.com/Lir00f/vue_abc" target="_blank">Link</a><br>
-  <button class="button" e="alyarm">Button</button>
-  </div>
+  <p v-if="visibility">P1</p>
+  <p v-else>P2</p>
+  <button class = "button" @click="changeVisibility">visibility = {{ visibility }}</button>
 </template>
 
 <style >
-
 .button {
     background-color: #00eeff; /* Green */
     border-radius: 8px;
@@ -47,53 +33,5 @@ methods: {
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-}
-
-.button1 {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.button2:hover {
-    box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24),0 17px 50px 0 rgba(255, 255, 255, 0.19);
-}
-
-header {
-  line-height: 1.5;
-}
-
-.sc {
-  font-size: medium;
- color: aqua;
-}
-
-p {
-  line-height: 1.4;
-  font-size: large;
-  letter-spacing: 2px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: rgb(255, 0, 0);
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
 }
 </style>
