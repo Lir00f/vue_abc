@@ -13,14 +13,6 @@ export default {
 </template>
 
 
-<style>
-  table {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column-reverse;
-  }
-</style>
-
 <style >
 .button {
     background-color: #00eeff; /* Green */
