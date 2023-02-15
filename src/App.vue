@@ -2,7 +2,11 @@
 export default {
   data() {
     return {
-      arr: ['a', 'b', 'c'],
+      data: {
+      user1: '1000',
+      user2: '2000',
+      user3: '5000',
+      }
     }
   },
   methods: {
@@ -10,7 +14,18 @@ export default {
 }
 </script>
 <template>
-  <p class ="button" v-for="(elem, klych) in arr">{{ klych }}:&nbsp {{ elem }}</p>
+  <ul>
+    <li v-for="value in data">{{ value }}</li>
+  </ul>
+  <ul>
+    <li v-for="(value, key) in data">{{ key }} - {{ value }}</li>
+  </ul>
+  <ul>
+    <li v-for="(value, key, index) in data">{{ key }} - {{ value }} - {{ index }}</li>
+  </ul>
+  <ul>
+    <li v-for="(value, key, index) in data">{{ key }} - {{ value }} - {{ index + 1 }}</li>
+  </ul>
 </template>
 
 <style >
