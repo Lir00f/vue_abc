@@ -2,22 +2,23 @@
 export default {
   data() {
     return {
-      vozrast: " ",
+      visibility: true,
     }
   },
   methods: {
+    toggle: function() {
+      this.visibility = !this.visibility;
+    }
   }
 }
 </script>
 <template>
-  <h3>Введите ваш возраст: </h3><br>
-  <input type="number" v-model.number="vozrast">
-  <br>
-  <p class="button" v-if="vozrast < 14">Вы ребенок</p>
-  <p class="button"  v-else-if="vozrast < 18">Вы подросток</p>
-  <p class="button"  v-else-if="vozrast < 25">Вы молодой человек</p>
-  <p class="button"  v-else-if="vozrast <= 59">Вы взрослый человек</p>
-  <p class="button"  v-else-if="vozrast >= 60">Вы пожилой человек</p>
+  <div v-if="visibility">
+  <p>1</p>
+  <p>2</p>
+  <p>3</p>
+  </div>
+  <button class="button" @click="toggle">тык</button>
 </template>
 
 <style >
