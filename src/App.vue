@@ -2,8 +2,6 @@
   export default {
     data() {
 	return {
-    cost: '50',
-    amount: '3',
     price: 'Press to compute the price',
 		name: 'Shadow',
 		surn: 'Fiend',
@@ -12,13 +10,12 @@
 		href: 'page.html',
 	}
 },
-methods: {
-    computePrice: function() {
-      this.price = (this.cost * this.amount);
+methods: { 
+  alyarm: function() {
+      alert(`This will only be shown once`);
     }
   }
 }
-let today = new Date(); 
 </script>
 
 <template>
@@ -29,11 +26,8 @@ let today = new Date();
   <img width="500" height="500" :src="attr">
   <div> <p> Hello, i'm {{ name }} {{ surn }}</p>
   <p>Check out my skills <a href="page.html">here</a></p> <br>
-  <p>Enter number for cost:</p>
-  <input type="number" v-model.number="cost" ref="costField">
-  <p>Enter number for amount:</p>
-  <input type="number" v-model.number="amount" ref="amountField">
-  <button class="button" k="computePrice">{{ price }}</button>
+  <a href.prevent="https://github.com/Lir00f/vue_abc" target="_blank">Link</a><br>
+  <button class="button" e="alyarm">Button</button>
   </div>
 </template>
 
