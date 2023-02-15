@@ -2,6 +2,7 @@
 export default {
   data() {
     return {
+      values: [1, 3, 5, -4, 7],
     }
   },
   methods: {
@@ -9,7 +10,9 @@ export default {
 }
 </script>
 <template>
-  <p v-for="value in 50">{{ value }}&nbsp;</p>
+  <div v-for="value in values">
+    <p v-if="value >= 0">{{ value }}&nbsp;</p>
+  </div>
 </template>
 
 
