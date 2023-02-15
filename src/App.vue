@@ -2,46 +2,21 @@
   export default {
     data() {
 	return {
-    text: 'type',
+    cost: '50',
+    amount: '3',
+    price: 'Press to compute the price',
 		name: 'Shadow',
 		surn: 'Fiend',
     attr: 'sf.gif',
     text: 'page',
 		href: 'page.html',
-    num: 5,
-    num1: 1,
-		num2: 2,
-		num3: 3,
-    arr1: ['x', 'y', 'z'], 
-    arr2: [1, 2, 3],
-    obj: {x: 1, y: 2, z: 3}, 
-    date : '2',
 	}
 },
-methods: { 
- show: function() { 
-  alert(today); 
- },
- summ: function() {
-  alert(this.num1 + this.num2)
- },
-data: function(){
-let date = this.dayOfWeek(this.date);
-alert(date);
-},
-dayOfWeek: function(date){
-let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-return days[date-1];
-},
-double: function(str){
-alert(str*str);
-},changeToType: function() {
-      this.text = 'type';
-    },
-changeToWrite: function() {
-      this.text = 'write';
+methods: {
+    computePrice: function() {
+      this.price = (this.cost * this.amount);
     }
-}
+  }
 }
 let today = new Date(); 
 </script>
@@ -53,10 +28,12 @@ let today = new Date();
   <br>
   <img width="500" height="500" :src="attr">
   <div> <p> Hello, i'm {{ name }} {{ surn }}</p>
-    <p>Check out my skills <a href="page.html">here</a></p> <br>
-    <p>{{ text }}</p><br>
-    <button class="button" @click="changeToWrite">Change to "write"</button><br>
-    <button class="button" @click="changeToType">Change to "type"</button> 
+  <p>Check out my skills <a href="page.html">here</a></p> <br>
+  <p>Enter number for cost:</p>
+  <input type="number" v-model.number="cost" ref="costField">
+  <p>Enter number for amount:</p>
+  <input type="number" v-model.number="amount" ref="amountField">
+  <button class="button" k="computePrice">{{ price }}</button>
   </div>
 </template>
 
