@@ -2,7 +2,28 @@
 export default {
   data() {
     return {
-      value: [1000, 2000, 5000],
+      hrefs: [
+        {href: '1.html', value: 'value1'},
+        {href: '2.html', value: 'value2'},
+        {href: '3.html', value: 'value3'},
+		  ],
+      sales: [
+        {
+          name: 'sale1',
+          price: 1000,
+          quantity: 11
+        },
+        {
+          name: 'sale2',
+          price: 2000,
+          quantity: 6
+        },
+        {
+          name: 'sale3',
+          price: 5000,
+          quantity: 5
+        },
+		  ]
     }
   },
   methods: {
@@ -10,17 +31,26 @@ export default {
 }
 </script>
 <template>
-  	<template v-for="obj in value">
-		<p>&nbsp;{{ obj }}&nbsp;</p>
-		<hr>
-    </template>
-    <ul v-for="obj in value">
-      <li>
-        <p>&nbsp;{{ obj }}&nbsp;</p>
-      </li>
-      <hr>
-    </ul>
+  Задание 1&nbsp;|&nbsp;
+  <ul v-for="smh in hrefs">
+    <li><a href="{{ smh.href }}">{{ smh.value }}</a></li>
+  </ul>
+  <br>Задание 2&nbsp;|&nbsp;
+  <table v-for="sale in sales">
+    <tr>
+      <td>{{ sale.name }}</td>
+      <td>{{ sale.price }}</td>
+      <td>{{ sale.quantity }}</td>
+    </tr>
+  </table>
 </template>
+<style>
+  table {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+  }
+</style>
 
 <style >
 .button {
