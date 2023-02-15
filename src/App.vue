@@ -2,20 +2,25 @@
 export default {
   data() {
     return {
-      isAdmin: true,
+      den: "if you see this then something went wrong",
     }
   },
   methods: {
-    toggle: function() {
-      this.isAdmin = !this.isAdmin;
-    }
-  }
+    denOfTheWeek: function() {
+    this.den = new Date().getDay();
+  },
+}
 }
 </script>
 <template>
-  <button class="button" @click="toggle">{{ isAdmin ? "Выдать админку" : "Забрать админку" }}</button><br>
-  <p v-if="isAdmin">Пользователь сайта не являеется администратором</p>
-  <p v-else>Вы администратор!</p>
+  <button class="button" @click="denOfTheWeek">тык</button><br>
+  <p v-if="this.den === 1">Понедельник</p>
+  <p v-if="this.den === 2">Вторник</p>
+  <p v-if="this.den === 3">Среда</p>
+  <p v-if="this.den === 4">Четверг</p>
+  <p v-if="this.den === 5">Пятница</p>
+  <p v-if="this.den === 6">Суббота</p>
+  <p v-if="this.den === 0">Воскресенье</p>
 </template>
 
 <style >
