@@ -41,7 +41,7 @@ export default {
 
 <style >
 .button {
-    background-color: #00eeff; /* Green */
+    background-color: #46dde7; /* Green */
     border-radius: 8px;
     border: none;
     color: rgb(0, 0, 0);
