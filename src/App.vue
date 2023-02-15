@@ -2,11 +2,7 @@
 export default {
   data() {
     return {
-      data: {
-      user1: '1000',
-      user2: '2000',
-      user3: '5000',
-      }
+      value: [1000, 2000, 5000],
     }
   },
   methods: {
@@ -14,18 +10,16 @@ export default {
 }
 </script>
 <template>
-  <ul>
-    <li v-for="value in data">{{ value }}</li>
-  </ul>
-  <ul>
-    <li v-for="(value, key) in data">{{ key }} - {{ value }}</li>
-  </ul>
-  <ul>
-    <li v-for="(value, key, index) in data">{{ key }} - {{ value }} - {{ index }}</li>
-  </ul>
-  <ul>
-    <li v-for="(value, key, index) in data">{{ key }} - {{ value }} - {{ index + 1 }}</li>
-  </ul>
+  	<template v-for="obj in value">
+		<p>&nbsp;{{ obj }}&nbsp;</p>
+		<hr>
+    </template>
+    <ul v-for="obj in value">
+      <li>
+        <p>&nbsp;{{ obj }}&nbsp;</p>
+      </li>
+      <hr>
+    </ul>
 </template>
 
 <style >
