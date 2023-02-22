@@ -2,9 +2,8 @@
 export default {
   data() {
     return {
-      obj: {
-        hidden: true,
-      },
+      isValid: true,
+      isDisabled: true,
     };
   },
   methods: {
@@ -16,7 +15,7 @@ export default {
 </script>
 <template>
 
-<p :class="{active: true, valid: false,}">Task #1</p>
+<p :class="{ active: isValid, valid: isDisabled }">Task #1</p>
 </template>
 
 <style >
