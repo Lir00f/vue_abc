@@ -3,16 +3,23 @@ export default {
   data() {
     return {
       obj: {
-        done: true,
-        selected: false,
+        hidden: true,
       },
     };
   },
-  methods: {},
+  methods: {
+    setDone: function () {
+      this.obj.hidden = !this.obj.hidden;
+    },
+  },
 };
 </script>
 <template>
-  <p :class="obj">text</p>
+  <button class="button" @click="this.obj.hidden = false">hide Задание 2</button>
+  <button class="button" @click="this.obj.hidden = true">hide Задание 3</button>
+  <button class="button" @click="setDone">{{ obj.hidden ? "show" : "hide" }} Задание 4</button><br />
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+  <p :class="obj">Задание 1</p>
 </template>
 
 <style >
@@ -31,11 +38,7 @@ export default {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
-.done {
-  border: 5px solid blue
-}
-.selected {
-  color: rgb(128, 0, 128);
-  font-size: 12em;
+p.hidden {
+  display: none;
 }
 </style>
