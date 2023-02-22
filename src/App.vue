@@ -2,25 +2,54 @@
 export default {
   data() {
     return {
-      isDisabled: false,
+      var_1: "Task 1",
+      isCtrlPressed: false,
+      var_2: "ctrl+link pressed",
     };
   },
-  methods: {},
+  methods: {
+    lag: function () {
+      this.var_1 = this.$refs.textField.value;
+    },
+    leg: function (event) {
+      if (event.ctrlKey) {
+        this.isCtrlPressed = true;
+      }
+    },
+    handleLeftClick: function (event) {
+      if (!event.ctrlKey) {
+        this.var_2 = "left";
+      }
+    },
+    handleRightClick: function (event) {
+      if (!event.ctrlKey) {
+        this.var_2 = "right";
+      }
+    },
+    handleMiddleClick: function (event) {
+      if (!event.ctrlKey) {
+        this.var_2 = "middle";
+      }
+    },
+  },
 };
 </script>
 <template>
-  <input
-    type="checkbox"
-    :checked="isDisabled"
-    @click="($event) => (this.isDisabled = !this.isDisabled)"
-  />
+  <input type="text" @keyup.enter="lag" ref="textField" />
   &nbsp;
-  <button class="button"
-    v-bind:disabled="!isDisabled"
-    @click="($event) => (this.isDisabled = !this.isDisabled)"
+  <p>{{ var_1 }}</p>
+  &nbsp;
+  <a
+    href="vk.com/id1"
+    @click="leg"
+    @click.left="handleLeftClick"
+    @click.right="handleRightClick"
+    @click.middle="handleMiddleClick"
+    target="_blank"
+    >Задание 2 и 3</a
   >
-    {{ isDisabled ? "input включен" : "input выключен" }}
-  </button>
+  &nbsp;
+  <p v-if="isCtrlPressed">{{ var_2 }}</p>
 </template>
 
 <style >
