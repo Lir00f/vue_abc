@@ -2,41 +2,14 @@
 export default {
   data() {
     return {
-      arr: ['a', 'b', 'd'],
-    }
+      cssClasses: "border: 2px solid blue",
+    };
   },
-  methods: {
-    add: function() {
-		  this.arr.push('b');
-  },
-    delFirst: function() {
-      this.arr.shift();
-  },
-    delLast: function() {
-      this.arr.pop();
-  },
-    delSecondToLast: function() {
-      this.arr.splice(-2, 1);
-  },
-    sortArr: function() {
-      this.arr.sort();
-  },
-    reverseOrder: function() {
-      this.arr.reverse();
-  }
-}
-}
+  methods: {},
+};
 </script>
 <template>
-  <button class="button" @click.once="add">1</button>
-  <button class="button" @click.once="delFirst">2</button>
-  <button class="button" @click.once="delLast">3</button>
-  <button class="button" @click.once="delSecondToLast">4</button>
-  <button class="button" @click.once="sortArr">5</button>
-  <button class="button" @click.once="reverseOrder">6</button>
-  <ul v-for="elem in arr">
-    <li>{{ elem }}</li>
-  </ul><br>
+    <p :style="cssClasses">text</p>
 </template>
 
 <style >
