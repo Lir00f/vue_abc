@@ -2,32 +2,16 @@
 export default {
   data() {
     return {
-      value: "",
-      value_button: "",
-      value_array: "",
+      value: true,
     };
   },
-  methods: {
-    split_value: function () {
-      this.value_array = this.value_button.split(" ");
-    },
-  },
+  methods: {},
 };
 </script>
 <template>
- <valuearea v-model="value"></valuearea>
+  <input type="checkbox" v-model="value" />
   &nbsp;
-  <p>{{ value }}</p>
-  &nbsp;
-  <valuearea v-model="value_button"></valuearea>
-  &nbsp;
-  <button class="button" @click="split_value">Массив</button>
-  &nbsp;
-  <ul v-for="elem in value_array">
-    <li :key="key">
-      {{ elem }}
-    </li>
-  </ul>
+  <p v-if="value">{{ value }}</p>
 </template>
 
 <style >
