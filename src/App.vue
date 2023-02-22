@@ -2,16 +2,27 @@
 export default {
   data() {
     return {
-      value: true,
+      lang: [],
     };
   },
   methods: {},
 };
 </script>
 <template>
-  <input type="checkbox" v-model="value" />
+<input type="checkbox" v-model="lang" value="c" />
   &nbsp;
-  <p v-if="value">{{ value }}</p>
+  <p>C</p>
+  &nbsp;
+  <input type="checkbox" v-model="lang" value="python" />
+  &nbsp;
+  <p>Python</p>
+  <input type="checkbox" v-model="lang" value="javascript" />
+  &nbsp;
+  <p>JavaScript</p>
+  &nbsp;
+  <ul v-for="elem in lang">
+    <li>{{ elem }}</li>
+  </ul>
 </template>
 
 <style >
