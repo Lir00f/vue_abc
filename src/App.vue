@@ -2,14 +2,17 @@
 export default {
   data() {
     return {
-      cssClasses: "border: 2px solid blue",
+      obj: {
+        done: true,
+        selected: false,
+      },
     };
   },
   methods: {},
 };
 </script>
 <template>
-    <p :style="cssClasses">text</p>
+  <p :class="obj">text</p>
 </template>
 
 <style >
@@ -27,5 +30,12 @@ export default {
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
+}
+.done {
+  border: 5px solid blue
+}
+.selected {
+  color: rgb(128, 0, 128);
+  font-size: 12em;
 }
 </style>
