@@ -2,54 +2,29 @@
 export default {
   data() {
     return {
-      var_1: "Task 1",
-      isCtrlPressed: false,
-      var_2: "ctrl+link pressed",
+      newValue: "",
+      items: ["a", "b", "c", "d", "e"],
     };
   },
   methods: {
-    lag: function () {
-      this.var_1 = this.$refs.textField.value;
+    addValueEnd: function () {
+      this.items.push(this.newValue);
     },
-    leg: function (event) {
-      if (event.ctrlKey) {
-        this.isCtrlPressed = true;
-      }
-    },
-    handleLeftClick: function (event) {
-      if (!event.ctrlKey) {
-        this.var_2 = "left";
-      }
-    },
-    handleRightClick: function (event) {
-      if (!event.ctrlKey) {
-        this.var_2 = "right";
-      }
-    },
-    handleMiddleClick: function (event) {
-      if (!event.ctrlKey) {
-        this.var_2 = "middle";
-      }
+    addValueBegin: function () {
+      this.items.unshift(this.newValue);
     },
   },
 };
 </script>
 <template>
-  <input type="text" @keyup.enter="lag" ref="textField" />
-  &nbsp;
-  <p>{{ var_1 }}</p>
-  &nbsp;
-  <a
-    href="vk.com/id1"
-    @click="leg"
-    @click.left="handleLeftClick"
-    @click.right="handleRightClick"
-    @click.middle="handleMiddleClick"
-    target="_blank"
-    >Задание 2 и 3</a
-  >
-  &nbsp;
-  <p v-if="isCtrlPressed">{{ var_2 }}</p>
+  <input v-model="newValue" />
+  <button @click="addValueEnd">Добавить в конец</button>
+  <button @click="addValueBegin">Добавить в начало</button>
+  <ul v-for="(item, index) in items" :key="index">
+    <li>
+      {{ item }}
+    </li>
+  </ul>
 </template>
 
 <style >
