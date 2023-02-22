@@ -1,21 +1,15 @@
 <script>
 export default {
   data() {
-    return {
-      isValid: true,
-      isDisabled: true,
-    };
+    return {};
   },
-  methods: {
-    setDone: function () {
-      this.obj.hidden = !this.obj.hidden;
-    },
-  },
+  methods: {},
 };
 </script>
 <template>
 
-<p :class="{ active: isValid, valid: isDisabled }">Task #1</p>
+<p :style="{ color: 'green', background: 'yellow', fontSize: '30px' }">Task #1</p>
+<p :style="{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '30px' }">Task #2</p>
 </template>
 
 <style >
