@@ -1,15 +1,20 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      zadanie: "Задание",
+      zadanie_number: 1,
+    };
   },
   methods: {},
 };
 </script>
 <template>
-
-<p :style="{ color: 'green', background: 'yellow', fontSize: '30px' }">Task #1</p>
-<p :style="{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '30px' }">Task #2</p>
+<input type="text" v-model="zadanie" />
+<p>{{ zadanie }}</p>
+<p>{{ zadanie.toUpperCase() }}</p>
+<input type="number" v-model="zadanie_number" />
+<p>{{ zadanie_number ** 2 }}</p>
 </template>
 
 <style >
