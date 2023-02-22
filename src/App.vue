@@ -15,11 +15,8 @@ export default {
 };
 </script>
 <template>
-  <button class="button" @click="this.obj.hidden = false">hide Задание 2</button>
-  <button class="button" @click="this.obj.hidden = true">hide Задание 3</button>
-  <button class="button" @click="setDone">{{ obj.hidden ? "show" : "hide" }} Задание 4</button><br />
-  <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
-  <p :class="obj">Задание 1</p>
+
+<p :class="{active: true, valid: false,}">Task #1</p>
 </template>
 
 <style >
@@ -38,7 +35,10 @@ export default {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
-p.hidden {
-  display: none;
+.active {
+  border: 5px solid green;
+}
+.valid {
+  color: blue;
 }
 </style>
