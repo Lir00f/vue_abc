@@ -1,13 +1,13 @@
 <script>
+import Employee from "./components/Employee.vue";
 export default {
-  data() {
-    return {};
+  components: {
+    Employee,
   },
-  methods: {},
 };
 </script>
 <template>
-  
+  <Employee/>
 </template>
 
 <style >
