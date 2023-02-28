@@ -10,18 +10,18 @@ export default {
     Employee
   },
   methods: {
-    prikolovni() {
-      alert('Dasha, Polina, Milana');
+    developerName(name) {
+      console.log(name);
     },
-    bebrusovi(){
-      alert('Lucy, Ilyuha, Leha')
+    developerSalary(name, salary){
+console.log(name, salary);
     }
   }
 }
 </script>
 
 <template>
-<Employee @show="prikolovni" @show1="bebrusovi" />
+<Employee @show="developerName" @show1="developerSalary"/>
 </template>
 
 <style >
