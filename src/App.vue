@@ -3,36 +3,25 @@ import Employee from './components/Employee.vue'
 export default {
   data() {
     return {
-      developers: [
-        {
-          id: 1,
-          name: 'Milana',
-          salary: 19000,
-          age: 19
-        },
-        {
-          id: 2,
-          name: 'Dasha',
-          salary: 1000,
-          age: 18
-        },
-        {
-          id: 3,
-          name: 'Polina',
-          salary: 3000,
-          age: 25
-        },
-      ],
+      
     }
   },
   components: {
     Employee
+  },
+  methods: {
+    prikolovni() {
+      alert('Dasha, Polina, Milana');
+    },
+    bebrusovi(){
+      alert('Lucy, Ilyuha, Leha')
+    }
   }
 }
 </script>
 
 <template>
-<Employee v-for="developer in developers" :name="developer.name" :salary="developer.salary" :age="developer.age" :key="developer.id" />
+<Employee @show="prikolovni" @show1="bebrusovi" />
 </template>
 
 <style >
