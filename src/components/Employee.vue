@@ -1,24 +1,17 @@
 <script>
 export default {
-    emits: ['show', 'show1'],
+    emits: ['show'],
     data() {
         return {
         }
     },
     methods: {
-        handleName() {
-            this.$emit('show', 'Milana Prikolovna');
-        },
-        handleSalary(){
-            this.$emit('show1', 'Polina Bebrusova', '15999');
-        }
     }
 }
 </script>
 
 <template>
-<button class="button" @click="handleName">Имя</button>
-<button class="button" @click="handleSalary">Зарплата</button>
+<button class="button" @click="$emit('show', 'Milana Prikolovna')">Имя</button>
 </template>
 
 <style>
