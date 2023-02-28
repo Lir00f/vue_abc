@@ -29,8 +29,8 @@ p:hover {
     text-align: center;
     font-size: 1.2cm;
   text-shadow:
-    -1px -1px 1px rgb(252, 1, 1),
-    1px -1px 1px rgb(252, 1, 1);
+    -1px -1px 1px rgb(252, 93, 1),
+    1px -1px 1px rgb(252, 93, 1);
   color: rgb(165, 145, 238);
 }
 
