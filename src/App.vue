@@ -12,12 +12,12 @@ export default {
         {
           id: 2,
           name: 'Polina',
-          surn: 'Bebrusova'
+          surn: 'Bebrusovna'
         },
         {
           id: 3,
-          name: 'Jujuba',
-          surn: 'Fandeev'
+          name: 'Emran',
+          surn: 'Jujubiev'
         },
       ],
     }
@@ -26,10 +26,14 @@ export default {
     Employee
   },
   methods: {
-    remove(id) {
-      this.developers = this.developers.filter((developer) => {
-        return developer.id !== id;
-      })
+    change(id, name, surn){
+      this.developers = this.developers.map((developer) => {
+        if(developer.id === id){
+          developer.name = name;
+          developer.surn = surn;
+        }
+        return developer;
+      });
     }
   }
 }
@@ -40,8 +44,8 @@ export default {
 		:id     ="developer.id"
 		:name   ="developer.name"
 		:surn   ="developer.surn"
-		@remove ="remove"
-		:key    ="developer.id"/>
+		:key    ="developer.id"
+    @change="change"/>
 </template>
 
 <style >
