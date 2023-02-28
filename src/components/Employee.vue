@@ -1,6 +1,6 @@
 <script>
 export default {
-    props: ['name'],
+    props: ['name', 'salary', 'age'],
     data() {
         return {
         }
@@ -9,12 +9,16 @@ export default {
 </script>
 
 <template>
-<ul class="styled">
-    <li v-for="developer in name">{{ developer }}</li>
-</ul>
+<p>{{ name }} 
+<br>
+{{ salary }} 
+<br>
+{{ age }}</p>
 </template>
+
+
 <style>
-p,li,ul {
+p {
     font-size: 1cm;
     text-align: center;
   text-shadow:
@@ -24,7 +28,7 @@ p,li,ul {
   transition: all .5s;
 }
 
-p,li,ul:hover {
+p:hover {
     text-align: center;
     font-size: 1.2cm;
   text-shadow:

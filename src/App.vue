@@ -1,13 +1,21 @@
 <script>
-import Employee from "./components/Employee.vue";
+import Employee from './components/Employee.vue'
 export default {
-  components: {
-    Employee,
+  data() {
+    return {
+      name: 'Milana Prikolovna',
+      salary: '5000',
+      age: '19',
+    }
   },
-};
+  components: {
+    Employee
+  }
+}
 </script>
+
 <template>
-  <Employee :name="['Milana', 'Alex', 'Polina', 'Dasha', 'Leha', 'Ilyuha']"/>
+<Employee :name="name" :salary="salary" :age="age"/>
 </template>
 
 <style >
