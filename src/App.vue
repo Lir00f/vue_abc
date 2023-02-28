@@ -7,7 +7,7 @@ export default {
 };
 </script>
 <template>
-  <Employee/>
+  <Employee name="Milana" surn="Prikolovna" age="19" />
 </template>
 
 <style >
