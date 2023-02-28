@@ -3,9 +3,26 @@ import Employee from './components/Employee.vue'
 export default {
   data() {
     return {
-      name: 'Milana Prikolovna',
-      salary: '5000',
-      age: '19',
+      developers: [
+        {
+          id: 1,
+          name: 'Milana',
+          salary: 19000,
+          age: 19
+        },
+        {
+          id: 2,
+          name: 'Dasha',
+          salary: 1000,
+          age: 18
+        },
+        {
+          id: 3,
+          name: 'Polina',
+          salary: 3000,
+          age: 25
+        },
+      ],
     }
   },
   components: {
@@ -15,7 +32,7 @@ export default {
 </script>
 
 <template>
-<Employee :name="name" :salary="salary" :age="age"/>
+<Employee v-for="developer in developers" :name="developer.name" :salary="developer.salary" :age="developer.age" :key="developer.id" />
 </template>
 
 <style >
